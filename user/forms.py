@@ -2,8 +2,6 @@ from django import forms
 from django.core.exceptions import ValidationError
 from typing import Any
 
-# from django.contrib.auth import authenticate
-
 from user.models import Customer
 
 
