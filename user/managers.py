@@ -1,10 +1,8 @@
 from django.contrib.auth.models import BaseUserManager
 
-# from .models import Customer
-
 
 class CustomerManager(BaseUserManager):
-    def create_user(self, email, password=None, **extra_fields):
+    def create_user(self, email: str, password: str, **extra_fields: dict):
         if not email:
             raise ValueError("User must have an email address")
         user = self.model(email=self.normalize_email(email), **extra_fields)
@@ -24,5 +22,10 @@ class CustomerManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
     # This method allows Django to fetch the user instance using the email field
-    def get_by_natural_key(self, email: str | None):
+    def get_by_natural_key(self, email: str | None) -> str:
+        """
+        This method allows Django to fetch a Customer object using the email field as the "natural key".
+        It takes an email address as input and returns the corresponding Customer object. This method is used internally by Django for certain operations,
+        such as handling user authentication.
+        """
         return self.get(email=email)

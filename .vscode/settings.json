@@ -1,4 +1,6 @@
 {
+    "python.analysis.typeCheckingMode": "basic",
     "python.analysis.inlayHints.functionReturnTypes": false,
-    "python.analysis.inlayHints.variableTypes": false
+    "python.analysis.inlayHints.variableTypes": false,
+    "autoDocstring.docstringFormat": "numpy"
 }
