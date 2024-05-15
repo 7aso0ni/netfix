@@ -37,11 +37,11 @@ class Customer(AbstractBaseUser):
     def __str__(self):
         return self.username
 
-    @property
-    def is_staff(self):
-        "Is the user a member of staff?"
-        # Simplest possible answer: All admins are staff
-        return self.is_staff
+    # @property
+    # def is_staff(self):
+    #     "Is the user a member of staff?"
+    #     # Simplest possible answer: All admins are staff
+    #     return self.is_staff
 
     class Meta:
         # you can set the name of the database table instead of having django make the default value
